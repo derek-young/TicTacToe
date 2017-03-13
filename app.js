@@ -31,9 +31,6 @@
     if (state.inGame) {
       if (board.validateInput.call(board, text)) {
         board.recordMove.call(board, text);
-        if (board.winner.call(board)) {
-          return renderUI(winner.bind(null, board.turn));
-        }
       }
       return renderUI(board.draw.bind(board));
     }
@@ -64,12 +61,6 @@
     console.log('\n');
     console.log('Type "Start" to begin a new game or "Quit" it exit');
     console.log('\n\n\n');
-  }
-
-  function Winner(turn) {
-    console.log('\n\n\n\n\n');
-    console.log(turn + ' wins!');
-    console.log('\n\n\n\n\n');
   }
 
   function header() {
